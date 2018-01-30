@@ -6,12 +6,12 @@ package com.n.demo;
 
 public class Camera2 extends CameraViewImpl {
     @Override
-    void openCamera() {
+    void start() {
 
     }
 
     @Override
-    void release() {
+    void stop() {
 
     }
 

@@ -18,6 +18,7 @@ public class SurfaceViewPreview extends PreviewImpl {
 
     SurfaceViewPreview(Context context, ViewGroup viewGroup) {
         surfaceView = new SurfaceView(context);
+        surfaceView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         viewGroup.addView(surfaceView);
         final SurfaceHolder holder = surfaceView.getHolder();
 

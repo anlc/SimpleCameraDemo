@@ -27,20 +27,36 @@ public class CameraView extends FrameLayout {
         super(context, attrs, defStyleAttr);
 
         final PreviewImpl preview = createPreviewImpl(context);
-        if (Build.VERSION.SDK_INT < 21) {
-            cameraImpl = new Camera1();
-        } else if (Build.VERSION.SDK_INT < 23) {
-            cameraImpl = new Camera2();
-        }
+//        if (Build.VERSION.SDK_INT < 21) {
+        cameraImpl = new Camera1(preview);
+//        } else if (Build.VERSION.SDK_INT < 23) {
+//            cameraImpl = new Camera2();
+//        }
     }
 
     private PreviewImpl createPreviewImpl(Context context) {
         PreviewImpl preview;
-        if (Build.VERSION.SDK_INT < 14) {
-            preview = new SurfaceViewPreview(context, this);
-        } else {
-            preview = new TextureViewPreView(context, this);
-        }
+//        if (Build.VERSION.SDK_INT < 14) {
+        preview = new SurfaceViewPreview(context, this);
+//        } else {
+//            preview = new TextureViewPreView(context, this);
+//        }
         return preview;
+    }
+
+    public void openCamera() {
+        cameraImpl.start();
+    }
+
+    public void release() {
+        cameraImpl.stop();
+    }
+
+    public void takePic() {
+        cameraImpl.takePic();
+    }
+
+    public void takeVideo() {
+        cameraImpl.takeVideo();
     }
 }

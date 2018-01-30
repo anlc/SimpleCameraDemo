@@ -6,9 +6,9 @@ package com.n.demo;
 
 abstract class CameraViewImpl {
 
-    abstract void openCamera();
+    abstract void start();
 
-    abstract void release();
+    abstract void stop();
 
     abstract void takePic();
 

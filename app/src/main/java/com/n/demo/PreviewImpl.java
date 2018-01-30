@@ -42,4 +42,12 @@ abstract class PreviewImpl {
     protected void dispatchSurfaceChanged(){
         callBack.onSurfaceChanged();
     }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 }
